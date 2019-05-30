@@ -60,6 +60,34 @@
             </objects>
             <point key="canvasLocation" x="1415.2" y="137.18140929535232"/>
         </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="3gM-rY-l5j">
+            <objects>
+                <tableViewController id="jEU-j6-KcV" customClass="HistoryTableViewController" customModule="SeeFood_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qAz-30-3zn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pfr-Y9-gZI">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfr-Y9-gZI" id="GA8-P6-ABh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jEU-j6-KcV" id="OIB-rx-yYc"/>
+                            <outlet property="delegate" destination="jEU-j6-KcV" id="Ulb-El-04H"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7jD-6H-mzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1079" y="878"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="eIB-cT-Dt4">
             <objects>
@@ -82,6 +110,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="v2Z-cB-axb" id="fQR-cm-D0z"/>
+                                    <outlet property="delegate" destination="v2Z-cB-axb" id="cMb-nf-pim"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-bg-Dv4">
                                 <rect key="frame" x="113" y="86" width="149" height="48"/>
@@ -146,7 +178,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="history3"/>
                                 <connections>
-                                    <segue destination="v2Z-cB-axb" kind="show" id="ZNk-ea-uxf"/>
+                                    <segue destination="jEU-j6-KcV" kind="show" id="xTV-lO-5j6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take a photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYO-Bp-Doh">
@@ -287,7 +319,8 @@
         <image name="takePic3" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uYZ-qR-zaS"/>
+        <segue reference="fde-6y-2hB"/>
+        <segue reference="E4n-JC-zBh"/>
         <segue reference="Kq3-Fx-3K2"/>
     </inferredMetricsTieBreakers>
 </document>

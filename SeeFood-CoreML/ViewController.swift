@@ -21,7 +21,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.saveScore(playerName: "11111")
         imagePicker.delegate = self
         
     }
@@ -46,7 +47,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.searchResult = topResult.identifier.components(separatedBy: ",").first
 //            self.navigationController?.navigationBar.barTintColor = UIColor.green
             self.navigationController?.navigationBar.isTranslucent = false
-  
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.saveScore(playerName: self.searchResult!)
+            
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
