@@ -4,11 +4,16 @@
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="result" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="ResultEntity" representedClassName="ResultEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="sDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sImage" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="ScoreEntity" representedClassName="ScoreEntity" syncable="YES" codeGenerationType="class">
         <attribute name="playerName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Entity" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="ScoreEntity" positionX="-45" positionY="18" width="128" height="60"/>
+        <element name="ResultEntity" positionX="-54" positionY="9" width="128" height="75"/>
     </elements>
 </model>

@@ -1,10 +1,3 @@
-//
-//  ImportImageViewController.swift
-//  SeeFood-CoreML
-//
-//  Created by 吳姵瑩 on 28/5/19.
-//  Copyright © 2019 Angela Yu. All rights reserved.
-//
 
 import UIKit
 import CoreML
@@ -14,7 +7,9 @@ import Social
 class ImportImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var searchResult:String?
+    var sImage: UIImage?
     
+    @IBOutlet weak var importText: UILabel!
     @IBAction func importImage(_ sender: Any) {
         let image = UIImagePickerController()
         
@@ -38,6 +33,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         {
             myImageView.image = image
             
+            self.sImage = image
+            
             guard let ciImage = CIImage(image: image) else {
                 fatalError("couldn't convert uiimage to CIImage")
             }
@@ -49,6 +46,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         }
         
         self.dismiss(animated: true, completion: nil)
+        importText.text = ""
         
         
     }
@@ -73,12 +71,18 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                     fatalError("unexpected result type from VNCoreMLRequest")
             }
             
-            //                if topResult.identifier.contains("hotdog") {
-            //                    DispatchQueue.main.async {
+       
             self.navigationItem.title = topResult.identifier.components(separatedBy: ",").first;
             self.searchResult = topResult.identifier.components(separatedBy: ",").first
-            //            self.navigationController?.navigationBar.barTintColor = UIColor.green
+          
             self.navigationController?.navigationBar.isTranslucent = false
+            
+            let sImage = self.sImage
+            
+            let imageData = sImage?.pngData()
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.saveResult(sDesc: self.searchResult!, sImage: imageData!)
 
         }
         

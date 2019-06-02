@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  assi2
-//
-//  Created by Xiaoran Luo on 4/5/19.
-//  Copyright © 2019 Xiaoran Luo. All rights reserved.
-//
+
 
 import UIKit
 import CoreData
@@ -47,32 +41,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
     
     // get -> Get the data from the database
-    func getScore() -> [ScoreEntity] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ScoreEntity")
+    func getResult() -> [ResultEntity] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ResultEntity")
         
         do{
-            return try persistentContainer.viewContext.fetch(fetchRequest) as! [ScoreEntity]
+            return try persistentContainer.viewContext.fetch(fetchRequest) as! [ResultEntity]
         }catch{
             fatalError("Can't find any score")
         }
-        
-        
     }
     
-    // set -> Save a new record in the database
-    func saveScore(playerName: String){
-        let scoreEntity = ScoreEntity(context: persistentContainer.viewContext)
-        scoreEntity.playerName = playerName
+    func saveResult(sDesc: String, sImage: Data){
+        let resultEntity = ResultEntity(context: persistentContainer.viewContext)
+        resultEntity.sDesc = sDesc
+        resultEntity.sImage = sImage
         self.saveContext()
-        
     }
-    
-    
-    
-    
-    
-    
-    
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*

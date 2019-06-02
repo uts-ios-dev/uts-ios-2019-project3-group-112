@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeeFood_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="group_112" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="RUA-CU-fDV" id="u5U-bx-F0D"/>
+                        <outlet property="photoText" destination="qxU-Ka-3oq" id="xO2-yg-xF6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -63,18 +64,27 @@
         <!--History Table View Controller-->
         <scene sceneID="3gM-rY-l5j">
             <objects>
-                <tableViewController id="jEU-j6-KcV" customClass="HistoryTableViewController" customModule="SeeFood_CoreML" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qAz-30-3zn">
+                <tableViewController id="jEU-j6-KcV" customClass="HistoryTableViewController" customModule="group_112" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qAz-30-3zn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pfr-Y9-gZI">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="pQb-qh-ZSa" rowHeight="70" style="IBUITableViewCellStyleDefault" id="pfr-Y9-gZI">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfr-Y9-gZI" id="GA8-P6-ABh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pQb-qh-ZSa">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -86,7 +96,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jD-6H-mzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1079" y="878"/>
+            <point key="canvasLocation" x="-1079.2" y="877.51124437781118"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eIB-cT-Dt4">
@@ -131,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="-239" y="878"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="laq-fU-lGQ">
             <objects>
-                <viewController id="gCz-p8-Ml7" sceneMemberID="viewController">
+                <viewController id="gCz-p8-Ml7" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7la-3O-ndE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +225,7 @@
         <!--Title-->
         <scene sceneID="z1z-Os-7W2">
             <objects>
-                <viewController id="bxe-j8-x8a" customClass="ImportImageViewController" customModule="SeeFood_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bxe-j8-x8a" customClass="ImportImageViewController" customModule="group_112" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8J9-M1-JVx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,6 +264,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="importText" destination="LXC-fz-Y7U" id="BEJ-Mj-Hio"/>
                         <outlet property="myImageView" destination="hlg-Pu-1Dm" id="J4a-mg-2kN"/>
                     </connections>
                 </viewController>
@@ -264,7 +275,7 @@
         <!--Result-->
         <scene sceneID="Cus-Z1-XUU">
             <objects>
-                <viewController id="tbk-tg-nRW" customClass="WiKiViewController" customModule="SeeFood_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tbk-tg-nRW" customClass="WiKiViewController" customModule="group_112" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lRM-gs-h6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,7 +330,6 @@
         <image name="takePic3" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fde-6y-2hB"/>
         <segue reference="E4n-JC-zBh"/>
         <segue reference="Kq3-Fx-3K2"/>
     </inferredMetricsTieBreakers>
