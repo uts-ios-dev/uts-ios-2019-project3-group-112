@@ -6,16 +6,11 @@ import UIKit
 class HistoryTableViewController: UITableViewController {
     
 //     var scoresFromData: [Result] = [Result]()
-     var resultsFromData: [Result] = [Result]()
+    var resultsFromData: [Result] = [Result]()
+    var selectedItem: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +47,17 @@ class HistoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = resultsFromData[indexPath.row].sDesc
         cell.imageView?.image = UIImage(data: resultsFromData[indexPath.row].sImage)
+//        self.selectedItem = resultsFromData[indexPath.row].sDesc
+//        performSegue(withIdentifier: "toWiki", sender: nil)
         return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.selectedItem = resultsFromData[indexPath.row].sDesc
+        performSegue(withIdentifier: "toWiki", sender: nil)
+       
     }
 
     // animation of displaying table view
@@ -78,6 +83,13 @@ class HistoryTableViewController: UITableViewController {
                 }
             }
             delayOffset += 1
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWiki" {
+            let wikiView = segue.destination as! WiKiViewController
+            wikiView.text = self.selectedItem
         }
     }
 }

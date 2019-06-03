@@ -98,6 +98,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
             let wikiView = segue.destination as! WiKiViewController
             
             wikiView.text = self.searchResult
+            wikiView.sImage = self.sImage
         }
     }
 

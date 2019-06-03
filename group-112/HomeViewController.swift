@@ -17,8 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        appDelegate.saveScore(playerName: "11111")
+
         imagePicker.delegate = self
         
     }
@@ -45,16 +44,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.navigationController?.navigationBar.isTranslucent = false
             
             let sImage = self.sImage
-            
             let imageData = sImage?.pngData()
-            
-            
-            
-            //save the first result text to core data
+//            save the first result text to core data
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.saveResult(sDesc: self.searchResult!, sImage: imageData!)
-            
-        }
+}
         
         let handler = VNImageRequestHandler(ciImage: image)
         
@@ -100,6 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let wikiView = segue.destination as! WiKiViewController
             
             wikiView.text = self.searchResult
+            wikiView.sImage = self.sImage
             
             
         }

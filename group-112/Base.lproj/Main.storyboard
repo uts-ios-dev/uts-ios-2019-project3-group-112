@@ -93,6 +93,9 @@
                             <outlet property="delegate" destination="jEU-j6-KcV" id="Ulb-El-04H"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="tbk-tg-nRW" kind="show" identifier="toWiki" id="gzP-YL-zZR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jD-6H-mzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVc-Lu-6ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239" y="878"/>
+            <point key="canvasLocation" x="-1359" y="45"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="laq-fU-lGQ">
@@ -330,7 +333,7 @@
         <image name="takePic3" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="E4n-JC-zBh"/>
+        <segue reference="gzP-YL-zZR"/>
         <segue reference="Kq3-Fx-3K2"/>
     </inferredMetricsTieBreakers>
 </document>
